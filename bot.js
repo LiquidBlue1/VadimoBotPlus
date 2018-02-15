@@ -28,7 +28,7 @@ client.on("message", async message => {
   }
     
   if(command === "kick") {
-    if(!message.member.roles.some(r=>["Admins"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.reply("אין לך תגישה הזו");
     
     let member = message.mentions.members.first();
@@ -47,7 +47,7 @@ client.on("message", async message => {
 
   }
     if(command === "ban") {
-    if(!message.member.roles.some(r=>["Admins"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.reply("אין לך תגישה הזו");
     
     let member = message.mentions.members.first();
